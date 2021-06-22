@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<form id='new-post' action='/games' method='POST'>
+    <label>Post Title</label>
+    <input type='text' name='gameTitle'>
+    <br>
+    <label>Post Text</label>
+    <textarea name='gameText'></textarea>
+    <br>
+    <label>Game URL</label>
+    <input type='text' name='gameUrl'>
+    <br>
+    <input type='submit' class='button' value='Create'>
+</form>
+
+<%- include('../partials/footer') %>

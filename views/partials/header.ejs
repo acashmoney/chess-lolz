@@ -9,13 +9,22 @@
 </head>
 <body>
     <div id='header-container'>
-        <div id='title-container'>
+        <a id='title-container' href='/'>
             <div id='main-title'>Chess Lolz</div>
             <div id='subtitle'>Satisfaction not guaranteed</div>
-        </div>
+        </a>
+        <% if (!user) { %> 
         <div id='login-info'>
             <a id='google-login' href='/auth/google'>
                 <img src='https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png' alt='Log In with Google'>
             </a>
+        <% } else { %>
+            <div id='user-info'>
+                <%= user.name %>
+                <br>
+                <br>
+                <a href='/logout' class='button'>Log Out</a> 
+            </div>
+        <% } %>
         </div>
     </div>

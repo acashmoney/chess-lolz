@@ -3,19 +3,26 @@
 body {
   font-family: 'Saira', sans-serif;
   font-size: 60;
-  background-color: #C6CFD9;
+  background-color: #E8F0F2;
   margin: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: #A2DBFA;
+}
+
 #header-container {
-  background-color: #FFFFFF;
+  background-color: #053742;
+  color: #A2DBFA;
   top: 0px;
   padding: 10px;
   margin: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-image: linear-gradient(#87CEEB, #FFFFFF);
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 #main-title {
@@ -27,16 +34,32 @@ body {
   font-size: 18px;
 }
 
+.button {
+  background-color: #39A2DB;
+  border-radius: 10px;
+  color: #E8F0F2;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+#user-info {
+  align-items: flex-end;
+}
+
 #content-container {
   font-size: 36;
   margin: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: #A2DBFA
 }
 
 .game-container {
-  background-color: #FFFFFF;
+  background-color: #E8F0F2;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -45,7 +68,9 @@ body {
 }
 
 #footer {
-  background-color: #FFFFFF;
+  background-color: #053742;
+  color: #A2DBFA;
+  text-decoration: none;
   padding: 10px;
   margin: 0px;
   bottom: 0;

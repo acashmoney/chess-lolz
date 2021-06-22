@@ -11,6 +11,7 @@ require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const gamesRouter = require('./routes/games');
 
 // create the Express app
 var app = express();
@@ -53,6 +54,7 @@ app.use(function (req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/games', gamesRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

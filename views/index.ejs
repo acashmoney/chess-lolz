@@ -1,22 +1,8 @@
 <%- include('./partials/header'); %>
+    <div>
+        <a href='/games/new' class='button'>Create Post</a>
+    </div>
     <div id='content-container'>
-        <div class='game-container'>
-            <div class='voting-container'>
-
-            </div>
-            <div class='game-frame'>
-                <iframe src="https://lichess.org/embed/TXQqsRWc?theme=blue&bg=auto" width=600 height=397 frameborder=0></iframe>
-            </div>
-            <h1>Mama didn't order that lunch</h1>
-        </div>
-        <div class='game-container'>
-            <h1>game 2</h1>
-        </div>
-        <div class='game-container'>
-            <h1>game 3</h1>
-        </div>
-        <div class='game-container'>
-            <h1>game 4</h1>
-        </div>
+       <%- include('./partials/game-container'); %>
     </div>
 <%- include('./partials/footer'); %>
