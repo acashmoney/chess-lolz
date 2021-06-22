@@ -2,13 +2,15 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-// session middleware
+
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
-// load the env vars
 require('dotenv').config();
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 // create the Express app
 var app = express();
@@ -49,8 +51,8 @@ app.use(function (req, res, next) {
 });
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
-
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
