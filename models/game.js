@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 const commentSchema = new Schema({
     commentText: {
         type: String
-    },
-    commentScore: {
-        type: Number
     }
+    // commentScore: {
+    //     type: Number
+    // }
 })
 
 const gameSchema = new Schema({

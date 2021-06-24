@@ -12,6 +12,7 @@ require('dotenv').config();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const gamesRouter = require('./routes/games');
+const commentsRouter = require('./routes/comments');
 
 // create the Express app
 var app = express();
@@ -51,6 +52,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/games', gamesRouter);
+app.use('/comments', commentsRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

@@ -1,5 +1,31 @@
 <%- include('../partials/header') %>
 
-
+    <div class='post-container'>
+        <div class='post-left-section'>
+            <div class='game-frame'> 
+                <iframe src="<%= games.gameUrl %>" width=600 height=397 frameborder=0></iframe>
+            </div>
+        </div>
+        <div class='post-right-section'>
+            <div class='post-title'>
+                <h1><%= games.gameTitle %><a href="/games/<%= games._id %>"></a></h1>
+            </div>
+            <div class='post-text'>
+                <p><%= games.gameText %> </p>
+            </div>
+            <div class='post-metadata'>
+                <div class='game-score'>
+                    <a href="/games/<%= games._id %>">See details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='game-comments'>
+        <form id="add-comment-to-game" action="/games/<%=games._id%>/comments">
+            <label>Add Comment:</label>
+            <textarea name="commentText"></textarea>
+            <input type="submit" value="Add Comment">
+        </form>
+    </div>
 
 <%- include('../partials/footer') %>

@@ -1,12 +1,34 @@
 <%- include('./partials/header'); %>
+
     <div>
         <a href='/games/new' class='button'>Create Post</a>
     </div>
     <% if (games.length) { %>
         <% games.forEach(function(g) { %>
-            <%- include('./partials/game-container'); %>
+            <div class='post-container'>
+                <div class='post-left-section'>
+                    <div class='game-frame'> 
+                        <iframe src="<%= g.gameUrl %>" width=600 height=397 frameborder=0></iframe>
+                    </div>
+                </div>
+                <div class='post-right-section'>
+                    <div class='post-title'>
+                        <h1><%= g.gameTitle %><a href="/games/<%= g._id %>"></a></h1>
+                    </div>
+                    <div class='post-text'>
+                        <p><%= g.gameText %> </p>
+                    </div>
+                    <div class='post-metadata'>
+                        <div class='game-score'>
+                            <a href="/games/<%= g._id %>">See details</a>
+                        </div>
+                        <div class='game-comments'></div>
+                    </div>
+                </div>
+            </div>
         <% }) %> 
     <%  } else { %>
         <h1 id='placeholder-text'>Nothing here yet. Sign in to make a post!</h1>
     <% } %>
+
 <%- include('./partials/footer'); %>

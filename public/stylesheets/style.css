@@ -112,6 +112,10 @@ textarea {
   resize: none;
 }
 
+form {
+  margin: 50px;
+}
+
 #footer {
   background-color: #053742;
   color: #A2DBFA;
