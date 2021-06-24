@@ -13,19 +13,21 @@
             <div class='post-text'>
                 <p><%= games.gameText %> </p>
             </div>
-            <div class='post-metadata'>
-                <div class='game-score'>
-                    <a href="/games/<%= games._id %>">See details</a>
-                </div>
-            </div>
         </div>
     </div>
     <div class='game-comments'>
-        <form id="add-comment-to-game" action="/games/<%=games._id%>/comments">
+        <form id="add-comment-to-game" method="POST" action="/games/<%=games._id%>/comments">
             <label>Add Comment:</label>
             <textarea name="commentText"></textarea>
             <input type="submit" value="Add Comment">
         </form>
+        <div id='comments-container'>
+            <% games.comments.forEach(function(c) { %>
+                <div class='comment'>
+                    <h4><%= c.commentText %> </h4>
+                </div>
+            <% }) %> 
+        </div>
     </div>
 
 <%- include('../partials/footer') %>

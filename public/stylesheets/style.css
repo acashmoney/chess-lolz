@@ -116,6 +116,23 @@ form {
   margin: 50px;
 }
 
+#comments-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+}
+
+.comment {
+  background: #E8F0F2;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+  border-radius: 5px;
+  width: 60%;
+  padding: 0.5%;
+  margin: 5px;
+}
+
 #footer {
   background-color: #053742;
   color: #A2DBFA;

@@ -52,7 +52,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/games', gamesRouter);
-app.use('/comments', commentsRouter);
+app.use('/', commentsRouter);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
