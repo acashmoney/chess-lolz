@@ -43,15 +43,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-// Add this middleware BELOW passport middleware
 app.use(function (req, res, next) {
-  res.locals.user = req.user; // assinging a property to res.locals, makes that said property (user) availiable in every
-  // single ejs view
+  res.locals.user = req.user;
   next();
 });
 
-// mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/games', gamesRouter);

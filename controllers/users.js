@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Game = require('../models/game');
 
 module.exports = {
     index,
@@ -13,5 +14,7 @@ function addGame(req, res) {
 }
 
 function index(req, res, next) {
-    res.render('index');
+    Game.find({}, function(err, games) {
+        res.render('index', { title: 'All Games', games});
+    });
 }

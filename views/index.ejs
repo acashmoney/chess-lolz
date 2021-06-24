@@ -2,7 +2,11 @@
     <div>
         <a href='/games/new' class='button'>Create Post</a>
     </div>
-    <div id='content-container'>
-       <%- include('./partials/game-container'); %>
-    </div>
+    <% if (games.length) { %>
+        <% games.forEach(function(g) { %>
+            <%- include('./partials/game-container'); %>
+        <% }) %> 
+    <%  } else { %>
+        <h1 id='placeholder-text'>Nothing here yet. Sign in to make a post!</h1>
+    <% } %>
 <%- include('./partials/footer'); %>

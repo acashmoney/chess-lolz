@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const usersCtrl = require('../controllers/users');
+const gamesCtrl = require('../controllers/games');
 
 router.get('/', usersCtrl.index);
 router.post('/games', isLoggedIn, usersCtrl.addGame);

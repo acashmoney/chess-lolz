@@ -2,13 +2,13 @@
 
 <form id='new-post' action='/games' method='POST'>
     <label>Post Title</label>
-    <input type='text' name='gameTitle'>
+    <input type='text' name='gameTitle' placeholder='Write a title for your post!' maxlength='80'>
     <br>
     <label>Post Text</label>
-    <textarea name='gameText'></textarea>
+    <textarea name='gameText' placeholder="If you're feeling wordy, feel free to elaborate on your post here :)"></textarea>
     <br>
     <label>Game URL</label>
-    <input type='text' name='gameUrl'>
+    <input type='text' name='gameUrl' placeholder="Lichess game URL">
     <br>
     <input type='submit' class='button' value='Create'>
 </form>

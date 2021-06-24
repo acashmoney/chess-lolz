@@ -1,8 +1,9 @@
 var router = require('express').Router();
 const passport = require('passport');
+const Game = require('../models/game');
 
 router.get('/', function(req, res) {
-  res.render('index');
+  res.redirect('/games')
 });
 
 router.get('/auth/google', passport.authenticate(
@@ -13,8 +14,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/users',
-    failureRedirect : '/users'
+    successRedirect : '/',
+    failureRedirect : '/'
   }
 ));
 

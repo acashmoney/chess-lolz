@@ -19,7 +19,8 @@ function show(req, res) {
 }
 
 function newGame(req, res) {
-    console.log('newGame function running')
+    const newGame = new Game();
+    console.log('newGame function running');
     res.render('games/new', {title: 'Create Post'});
 }
 
