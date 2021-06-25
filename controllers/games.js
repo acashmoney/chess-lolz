@@ -5,7 +5,6 @@ module.exports = {
     show,
     new: newGame,
     create,
-    update,
     delete: deleteGame
 }
 
@@ -53,16 +52,8 @@ function create(req, res) {
     })
 }
 
-function update (req, res) {
-    Game.findById(req.params.id, function(err, games) {
-        res.render('games/:id', {
-
-        })
-    })
-}
-
 function deleteGame (req, res) {
-    Game.findById(req.params.id, function(err, games) {
-        res.render('/games/:id')
+    Game.deleteOne(game._id, function(err, games) {
+        res.render('/games')
     })
 }

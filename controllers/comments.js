@@ -1,8 +1,9 @@
+const { deleteOne } = require('../models/game');
 const Game = require('../models/game');
 
 module.exports = {
     create,
-    delete: deleteComment
+    update
 }
 
 function create(req, res) {
@@ -18,8 +19,9 @@ function create(req, res) {
     });
 }
 
-function deleteComment(req, res) {
-    Game.findById(req.params.id, function(err, comment) {
-        
-    })
+function update(req, res) {
+    Game.findByIdAndUpdate(req.params.id, {'comments.0.commentText': req.body.newCommentText})
+    console.log('FLAG BELOW');
+    console.log(req.params.id);
+    console.log(req.body);
 }

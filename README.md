@@ -2,9 +2,9 @@
 
 Chess Lolz is a web application similar to Reddit for posting chess games. Users may create posts for chess games and add comments to these posts.
 
-![Post](https://imgur.com/a/u6FcXrz)
+[Post](https://imgur.com/a/u6FcXrz)
 
-![Comments](https://imgur.com/a/mopmkEG)
+[Comments](https://imgur.com/a/mopmkEG)
 
 ## Technologies Used
 * JavaScript
@@ -16,11 +16,11 @@ Chess Lolz is a web application similar to Reddit for posting chess games. Users
 
 ## Getting Started
 
-[Chess Lolz](https://chess-lolz.herokuapp.com/)
+[Click to access Chess Lolz](https://chess-lolz.herokuapp.com/)
 
 Users must login via Google in order to create/edit/delete their posts and make comments.
 
-To create a post which is formatted correctly:
+To create a post which is embedded correctly:
 1. Play a Lichess game!
 2. Go to game link.
 3. Click 'Analysis Board'.

@@ -13,6 +13,9 @@
             <div class='post-text'>
                 <p><%= games.gameText %> </p>
             </div>
+            <div class='post-controls'>
+                <a class='delete-link-btn'>Delete</a>
+            </div>
         </div>
     </div>
     <div class='game-comments'>
@@ -25,15 +28,29 @@
         <% } %>
         <div id='comments-container'>
             <h2>Comments</h2>
-                <% games.comments.forEach(function(c) { %>
+                <% games.comments.forEach(function(c, index) { %>
                     <div class='comment'>
-                        <h4><%= c.commentText %> </h4>
-                        <% if (req.user && req.user._id === String(c.author)) { %>
-                            <a class='button'>Delete</a>
-                        <% } %>
+                        <a class='edit-comment-btn' data-gameId='<%= games._id %>' data-commentIndex='<%= index %>'> <%= c.commentText %> </a>
                     </div>
                 <% }) %> 
         </div>
     </div>
+
+    <script>
+        function editComment(gameId, commentId) {
+            const result = fetch(`/games/${gameId}/comments/${commentId}`, {
+                method: 'PUT',
+                credentials: 'include',
+                body: JSON.stringify({newCommentText: 'Updated comment text'}),
+            });
+        }
+        const editButtons = document.getElementsByClassName('edit-comment-btn');
+        for(const editButton of editButtons) {
+            editButton.addEventListener('click', (evt) => {
+                const {gameid, commentindex} = evt.target.dataset;
+                editComment(gameid, commentindex);
+            });
+        }
+    </script>
 
 <%- include('../partials/footer') %>

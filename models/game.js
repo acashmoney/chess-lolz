@@ -29,7 +29,9 @@ const gameSchema = new Schema({
         type: Number
     },
     author: {
-        type: Schema.Types.ObjectId, ref: 'User'
+        type: Schema.Types.ObjectId, 
+        ref: 'User',
+        required: true
     },
     comments: {
         type: [commentSchema]
