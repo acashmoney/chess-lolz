@@ -20,8 +20,7 @@ function create(req, res) {
 }
 
 function update(req, res) {
-    Game.findByIdAndUpdate(req.params.id, {'comments.0.commentText': req.body.newCommentText})
+    Game.findByIdAndUpdate(req.params.id, {'comments.0.commentText': req.params.newCommentText})
     console.log('FLAG BELOW');
-    console.log(req.params.id);
-    console.log(req.body);
+    console.log(req.params);
 }

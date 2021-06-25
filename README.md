@@ -2,9 +2,9 @@
 
 Chess Lolz is a web application similar to Reddit for posting chess games. Users may create posts for chess games and add comments to these posts.
 
-[Post](https://imgur.com/a/u6FcXrz)
+![Post](https://i.imgur.com/ZIlUJ6f.png)
 
-[Comments](https://imgur.com/a/mopmkEG)
+![Comments](https://i.imgur.com/Nri7BND.png)
 
 ## Technologies Used
 * JavaScript

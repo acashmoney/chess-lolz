@@ -38,10 +38,9 @@
 
     <script>
         function editComment(gameId, commentId) {
-            const result = fetch(`/games/${gameId}/comments/${commentId}`, {
+            const result = fetch(`/games/${gameId}/comments/${commentId}/commentText/${JSON.stringify({newCommentText: 'Updated comment text'})}`, {
                 method: 'PUT',
-                credentials: 'include',
-                body: JSON.stringify({newCommentText: 'Updated comment text'}),
+                credentials: 'include'
             });
         }
         const editButtons = document.getElementsByClassName('edit-comment-btn');
