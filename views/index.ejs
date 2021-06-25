@@ -1,8 +1,10 @@
 <%- include('./partials/header'); %>
 
-    <div>
-        <a href='/games/new' class='button'>Create Post</a>
-    </div>
+    <% if (req.user) { %>
+        <div>
+            <a href='/games/new' class='button'>Create Post</a>
+        </div>
+    <% } %>
     <% if (games.length) { %>
         <% games.forEach(function(g) { %>
             <div class='post-container'>
@@ -18,11 +20,12 @@
                     <div class='post-text'>
                         <p><%= g.gameText %> </p>
                     </div>
-                    <div class='post-metadata'>
-                        <div class='game-score'>
-                            <a href="/games/<%= g._id %>">See details</a>
-                        </div>
-                        <div class='game-comments'></div>
+                    <div class='post-controls'>                  
+                        <a class='expand-link' href="/games/<%= g._id %>">Expand</a>
+                        <% if (req.user && req.user._id === String(g.author)) { %>
+                            <a class='edit-link'>Edit</a>
+                            <a class='delete-link'>Delete</a>
+                        <% } %>
                     </div>
                 </div>
             </div>

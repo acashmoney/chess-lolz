@@ -92,6 +92,11 @@ a {
   justify-content: space-between;
 }
 
+#expand-link {
+  color: #053742;
+  font-weight: bold;
+}
+
 label {
   font-weight: bold;
   color: #053742;
@@ -113,6 +118,8 @@ textarea {
 }
 
 form {
+  display: flex;
+  flex-direction: column;
   margin: 50px;
 }
 

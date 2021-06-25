@@ -16,17 +16,23 @@
         </div>
     </div>
     <div class='game-comments'>
-        <form id="add-comment-to-game" method="POST" action="/games/<%=games._id%>/comments">
-            <label>Add Comment:</label>
-            <textarea name="commentText"></textarea>
-            <input type="submit" value="Add Comment">
-        </form>
+        <% if (req.user) { %>
+            <form id="add-comment-to-game" method="POST" action="/games/<%=games._id%>/comments">
+                <label>Add Comment:</label>
+                <textarea name="commentText"></textarea>
+                <input type="submit" value="Add Comment">
+            </form>
+        <% } %>
         <div id='comments-container'>
-            <% games.comments.forEach(function(c) { %>
-                <div class='comment'>
-                    <h4><%= c.commentText %> </h4>
-                </div>
-            <% }) %> 
+            <h2>Comments</h2>
+                <% games.comments.forEach(function(c) { %>
+                    <div class='comment'>
+                        <h4><%= c.commentText %> </h4>
+                        <% if (req.user && req.user._id === String(c.author)) { %>
+                            <a class='button'>Delete</a>
+                        <% } %>
+                    </div>
+                <% }) %> 
         </div>
     </div>
 

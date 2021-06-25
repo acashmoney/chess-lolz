@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
     commentText: {
-        type: String
+        type: String,
+        required: true
+    },
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
-    // commentScore: {
-    //     type: Number
-    // }
 })
 
 const gameSchema = new Schema({
@@ -24,6 +27,9 @@ const gameSchema = new Schema({
     },
     gameScore: {
         type: Number
+    },
+    author: {
+        type: Schema.Types.ObjectId, ref: 'User'
     },
     comments: {
         type: [commentSchema]
