@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<form id='edit-post' action='/games/<%= games._id %>?_method=PUT' method='POST'>
+    <label>Post Title</label>
+    <input type='text' name='gameTitle' placeholder='<%= games.gameTitle %>' disabled>
+    <br>
+    <label>Post Text</label>
+    <textarea name='gameText'><%= games.gameText %></textarea>
+    <br>
+    <label>Game URL</label>
+    <input type='text' name='gameUrl' placeholder='<%= games.gameUrl %> ' disabled>
+    <br>
+    <button type='submit' class='button' value='Submit'>Submit</button>
+</form>
+
+<%- include('../partials/footer') %>

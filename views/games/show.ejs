@@ -8,14 +8,19 @@
         </div>
         <div class='post-right-section'>
             <div class='post-title'>
-                <h1><%= games.gameTitle %><a href="/games/<%= games._id %>"></a></h1>
+                <h1><%= games.gameTitle %></h1>
             </div>
             <div class='post-text'>
                 <p><%= games.gameText %> </p>
             </div>
-            <div class='post-controls'>
-                <a class='delete-link-btn'>Delete</a>
-            </div>
+            <% if (user && String(games.author) === String(user._id)) { %> 
+                <div class='post-controls'>
+                    <a href='/games/<%= games.id %>/edit' class='edit-post-btn'>Edit</a>
+                    <form class='delete-btn' action="/games/<%= games._id %>?_method=DELETE" method="POST">
+                        <button class='button' type='submit'>Delete</button>
+                    </form>
+                </div>
+            <% } %> 
         </div>
     </div>
     <div class='game-comments'>
@@ -23,20 +28,20 @@
             <form id="add-comment-to-game" method="POST" action="/games/<%=games._id%>/comments">
                 <label>Add Comment:</label>
                 <textarea name="commentText"></textarea>
-                <input type="submit" value="Add Comment">
+                <input type="submit" class='button' value="Add Comment">
             </form>
         <% } %>
         <div id='comments-container'>
             <h2>Comments</h2>
                 <% games.comments.forEach(function(c, index) { %>
                     <div class='comment'>
-                        <a class='edit-comment-btn' data-gameId='<%= games._id %>' data-commentIndex='<%= index %>'> <%= c.commentText %> </a>
+                        <%= c.commentText %> 
                     </div>
                 <% }) %> 
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         function editComment(gameId, commentId) {
             const result = fetch(`/games/${gameId}/comments/${commentId}/commentText/${JSON.stringify({newCommentText: 'Updated comment text'})}`, {
                 method: 'PUT',
@@ -50,6 +55,6 @@
                 editComment(gameid, commentindex);
             });
         }
-    </script>
+    </script> -->
 
 <%- include('../partials/footer') %>

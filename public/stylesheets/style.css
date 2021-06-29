@@ -42,7 +42,6 @@ a {
   text-decoration: none;
   padding: 10px;
   margin: 10px;
-
 }
 
 #user-dropdown {
@@ -97,6 +96,31 @@ a {
   font-weight: bold;
 }
 
+.post-controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.delete-link-btn {
+  color: #053742;
+  font-weight: bold;
+  border-style: solid;
+  height: 20px;
+}
+
+.edit-post-btn {
+  color: #053742;
+  font-weight: bold;
+  border-style: solid;
+  height: 20px;
+}
+
+.edit-comment-btn {
+  color: #053742;
+  font-weight: bold;
+}
+
+
 label {
   font-weight: bold;
   color: #053742;
@@ -121,6 +145,10 @@ form {
   display: flex;
   flex-direction: column;
   margin: 50px;
+}
+
+.delete-btn {
+  margin: 0px;
 }
 
 #comments-container {

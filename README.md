@@ -6,9 +6,12 @@ Chess Lolz is a web application similar to Reddit for posting chess games. Users
 
 ![Comments](https://i.imgur.com/Nri7BND.png)
 
+![ERD Diagram](https://i.imgur.com/TZaqR9O.png)
+
 ## Technologies Used
 * JavaScript
 * Express
+* Node
 * MongoDB
 * Mongoose
 * HTML
@@ -28,6 +31,12 @@ To create a post which is embedded correctly:
 5. Click 'Create Post' button on Chess Lolz.
 6. Add Title, Post Text (optional), and Lichess game analysis link.
 7. Hit Create Post.
+
+To edit post:
+1. Click 'Expand' on post.
+2. Click 'Edit' button.
+3. Update Post Text.
+4. Press 'Submit'.
 
 [Trello Board](https://trello.com/b/KxZLu2VI/ga-seir-project-2)
 

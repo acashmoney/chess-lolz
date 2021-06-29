@@ -5,6 +5,8 @@ module.exports = {
     show,
     new: newGame,
     create,
+    edit,
+    update,
     delete: deleteGame
 }
 
@@ -47,13 +49,26 @@ function create(req, res) {
 
     game.save(function(err) {
         if (err) return res.redirect('/games/new');
-        console.log(game);
         res.redirect(`/games/${game._id}`)
     })
 }
 
-function deleteGame (req, res) {
-    Game.deleteOne(game._id, function(err, games) {
-        res.render('/games')
+function edit(req, res) {
+    Game.findById(req.params.id, function(err, games) {
+        res.render('games/edit', {
+            games
+        });
     })
+}
+
+function update(req, res) {
+    Game.findByIdAndUpdate(req.params.id, req.body, function(err, games) {
+        res.redirect('/games');
+    });
+}
+
+function deleteGame (req, res) {
+    Game.findByIdAndDelete(req.params.id, function(err, games) {
+        res.redirect('/games');
+    });
 }
