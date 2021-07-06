@@ -41,20 +41,4 @@
         </div>
     </div>
 
-    <!-- <script>
-        function editComment(gameId, commentId) {
-            const result = fetch(`/games/${gameId}/comments/${commentId}/commentText/${JSON.stringify({newCommentText: 'Updated comment text'})}`, {
-                method: 'PUT',
-                credentials: 'include'
-            });
-        }
-        const editButtons = document.getElementsByClassName('edit-comment-btn');
-        for(const editButton of editButtons) {
-            editButton.addEventListener('click', (evt) => {
-                const {gameid, commentindex} = evt.target.dataset;
-                editComment(gameid, commentindex);
-            });
-        }
-    </script> -->
-
 <%- include('../partials/footer') %>
