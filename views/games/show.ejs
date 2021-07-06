@@ -15,7 +15,7 @@
             </div>
             <% if (user && String(games.author) === String(user._id)) { %> 
                 <div class='post-controls'>
-                    <a href='/games/<%= games.id %>/edit' class='edit-post-btn'>Edit</a>
+                    <a href='/games/<%= games.id %>/edit' id='edit-post-btn' class='button'>Edit</a>
                     <form class='delete-btn' action="/games/<%= games._id %>?_method=DELETE" method="POST">
                         <button class='button' type='submit'>Delete</button>
                     </form>
